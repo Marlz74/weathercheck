@@ -22,8 +22,8 @@ $temperature = (getTemperature($location));
 
 echo json_encode(
     [
-        "client_ip" => $client_ip, // The IP address of the requester
-        "location" => $location, // The city of the requester
+        "client_ip" => $client_ip, 
+        "location" => $location, 
         "greeting" => "Hello, " . ucfirst(strtolower($name)) . "!, the temperature is  $temperature  degrees Celcius in  $location "
     ]
 );
