@@ -1,6 +1,6 @@
 <?php
 
-$client_ip = $_SERVER['REMOTE_ADDR'];
+$client_ip = '8.8.8.8'; //$_SERVER['REMOTE_ADDR'];
 
 $name=isset($_GET['visitor_name'])?$_GET['visitor_name']:'anonymous';
 function getLocation($ip)
@@ -19,7 +19,7 @@ function getTemperature($city)
 }
 $location = getLocation($client_ip);
 $temperature = (getTemperature($location));
-
+header('content-type:application/json');
 echo json_encode(
     [
         "client_ip" => $client_ip, 
